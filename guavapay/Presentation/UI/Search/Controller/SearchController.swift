@@ -59,6 +59,8 @@ class SearchController: BaseController {
         search.searchBar.delegate = self
         navigationItem.searchController = search
         navigationController?.navigationBar.topItem?.hidesSearchBarWhenScrolling = false
+        
+        messageLabel.text = "You can search any country by tying its name in search box"
     }
     
     private func setupUIConstraints() {
