@@ -10,7 +10,7 @@ import UIKit
 import SwiftUI
 
 
-class SearchController: ViewController {
+class SearchController: BaseController {
     
     private typealias TableDataSource = UITableViewDiffableDataSource<Int, Country>
 
@@ -40,10 +40,6 @@ class SearchController: ViewController {
         super.init(nibName: nil, bundle: nil)
         
         self.viewModel.delegate = self
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {
@@ -83,6 +79,10 @@ class SearchController: ViewController {
             messageLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 32),
             messageLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -32)
         ])
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
 

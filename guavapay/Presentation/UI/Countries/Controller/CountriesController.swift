@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import SwiftUI
 
-class CountriesController: ViewController {
+class CountriesController: BaseController {
     
     typealias TableDataSource = UITableViewDiffableDataSource<Int, Country>
     
@@ -54,10 +54,6 @@ class CountriesController: ViewController {
         self.viewModel.delegate = self
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -100,6 +96,10 @@ class CountriesController: ViewController {
         Task {
             await viewModel.fetchCountries()
         }
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
 

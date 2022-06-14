@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  BaseController.swift
 //  guavapay
 //
 //  Created by Ali Almasli on 11.06.22.
@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class ViewController: UIViewController {
+class BaseController: UIViewController {
     lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         return refreshControl
