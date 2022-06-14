@@ -10,7 +10,7 @@ import UIKit
 import SwiftUI
 
 
-class SearchController: UIViewController {
+class SearchController: ViewController {
     
     private typealias TableDataSource = UITableViewDiffableDataSource<Int, Country>
 
@@ -30,21 +30,6 @@ class SearchController: UIViewController {
         table.register(UITableViewCell.self, forCellReuseIdentifier: UITableViewCell.description())
         table.translatesAutoresizingMaskIntoConstraints = false
         return table
-    }()
-    
-    private lazy var indicatorView: UIActivityIndicatorView = {
-        let indicator = UIActivityIndicatorView()
-        indicator.translatesAutoresizingMaskIntoConstraints = false
-        return indicator
-    }()
-    
-    private lazy var messageLabel: UILabel = {
-        let label = UILabel()
-        label.numberOfLines = 0
-        label.textAlignment = .center
-        label.text = "Please, enter name of country that you want to search"
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
     }()
     
     private var viewModel: SearchViewModel
